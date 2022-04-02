@@ -5,9 +5,8 @@ let productList = new Array();
 
 products.forEach((el) => {
   productList.push({
-    name: el.children[1].innerText,
-    category: el.children[2].innerText,
-    price: el.children[3].innerText,
+    id: el.id,
+    quantity: 1,
   });
 });
 

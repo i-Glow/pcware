@@ -1,13 +1,13 @@
 <?php 
 
-$hostName = "localhost";
+$host = "localhost";
 $userName = "good-game";
 $password = "123qwerty";
+$database = "pcware";
 
-$connected = mysqli_connect($host, $username, $password);
+$conn = mysqli_connect($host, $userName, $password, $database);
 
-if(!$connected)
+if(!$conn)
   die("Failed to connect" . mysqli_connect_error());
 
-echo "Connected succesfully";
 ?>
