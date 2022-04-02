@@ -39,7 +39,7 @@ function cookieQuantity(idx, value) {
   let list = getCookies();
   list[idx].quantity = value;
   const res = JSON.stringify(list);
-  document.cookie = "product=" + res + "; path=/";
+  setCookie("product", res);
 }
 
 //delete one product from cart
@@ -51,7 +51,7 @@ product.forEach((product, i) => {
     let list = getCookies();
     list.splice(i, 1);
     const res = JSON.stringify(list);
-    document.cookie = "product=" + res + "; path=/";
+    setCookie("product", res);
 
     totalPriceHandler();
   });
@@ -62,12 +62,12 @@ deleteAll.addEventListener("click", () => {
   product.forEach((product) => {
     product.remove();
     //remove from cookies
-    document.cookie = "product=;";
-
+    deleteCookie("product");
     totalPrice.innerText = "0 DA";
   });
 });
 
+// console.log(Date());
 // total price
 function totalPriceHandler() {
   const newPrice = document.querySelectorAll(".item-price");
@@ -91,4 +91,16 @@ function getCookies() {
     list = mycookie;
   }
   return list;
+}
+
+function setCookie(
+  cookie,
+  data = undefined,
+  date = "Fri, 31 Dec 9999 23:59:59 GMT"
+) {
+  document.cookie = `${cookie}=${data}; expires=${date}; path=/`;
+}
+
+function deleteCookie(cookie) {
+  document.cookie = `${cookie}=; expires=; path=/`;
 }

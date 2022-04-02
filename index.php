@@ -1,5 +1,5 @@
 <?php 
-  include("db.php");
+  include("config/db.php");
   $result = mysqli_query($conn, "SELECT * FROM product LIMIT 10");
   $product = mysqli_fetch_all($result);
 ?>
@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Good game</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="navbar.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style><?php include('styles/style.css'); ?></style>
   </head>
   <body>
     <!-- <div class="menu"></div> -->
@@ -93,6 +93,6 @@
     </div>
     <!-- FOOTER -->
     <footer></footer>
-    <script><?php include('script.js'); ?></script>
+    <script><?php include('scripts/script.js'); ?></script>
   </body>
 </html>

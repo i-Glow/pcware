@@ -1,6 +1,8 @@
 <?php 
-  include('db.php');
-  $products = json_decode($_COOKIE["product"]);
+
+  include('config/db.php');
+  if(isset($_COOKIE["product"]))
+    $products = json_decode($_COOKIE["product"]);
 
 ?>
 
@@ -11,9 +13,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panier</title>
-    <link rel="stylesheet" href="panier.css" />
-    <style><?php include('panier.css') ?></style>
-    <link rel="stylesheet" href="navbar.css" />
+    <!-- <link rel="stylesheet" href="panier.css" /> -->
+    <style><?php include('styles/panier.css') ?></style>
   </head>
   <body>
     <?php include("templates/navbar.php") ?>
@@ -118,6 +119,6 @@
         <div class="checkout-bottom">Note that!</div>
       </div>
     </div>
-    <script><?php include('panier.js'); ?></script>
+    <script><?php include('scripts/panier.js'); ?></script>
   </body>
 </html>
