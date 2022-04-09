@@ -2,6 +2,9 @@
 
 <nav>
   <!-- TODO: add a theme switch -->
+  <div class="switch">
+    <button id="switch-btn" class="switch-btn"></button>
+  </div>
   <a href="/good-games/panier.php">
     <svg
       width="18"
@@ -20,3 +23,4 @@
     </svg>
   </a>
 </nav>
+<script><?php include('scripts/theme.js'); ?></script>

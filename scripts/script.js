@@ -20,10 +20,8 @@ add.forEach((el, i) => {
 
       list = mycookie;
     }
-    console.log("here 1");
     if (!list.some((el) => el.id === productList[i].id)) {
       list.push(productList[i]);
-      console.log("here 1");
     }
 
     const res = JSON.stringify(list);

@@ -3,8 +3,32 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 15px;
+  background-color: var(--black);
 }
 
 svg {
+  cursor: pointer;
+}
+
+.switch {
+  position: relative;
+  width: 80px;
+  height: 30px;
+  background-color: var(--dark-black);
+  border-radius: 18px;
+}
+
+.switch-btn {
+  position: absolute;
+  width: 26px;
+  height: 24px;
+  border-radius: 100%;
+  outline: none;
+  border: none;
+  left: 3px;
+  top: 3px;
+  background-color: var(--black);
+  transition: 0.2s ease-out;
   cursor: pointer;
 }

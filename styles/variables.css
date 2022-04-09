@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --dark-black: #111111;
+  --light-black: #303030;
+  --black: #222222;
+  --white-text: #fff;
+  --purple: #9f60e7;
+  --gray: #777;
+  --font: Nunito;
+}

@@ -10,7 +10,7 @@
 }
 
 * {
-  color: white;
+  color: var(--white-text);
   font-family: Nunito;
 }
 
@@ -102,6 +102,7 @@ body {
   width: 35px;
   height: 35px;
   margin: 0 10px;
+  color: white;
 }
 
 .quantity:focus,

@@ -13,7 +13,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panier</title>
-    <!-- <link rel="stylesheet" href="panier.css" /> -->
     <style><?php include('styles/panier.css') ?></style>
   </head>
   <body>
@@ -119,6 +118,7 @@
         <div class="checkout-bottom">Note that!</div>
       </div>
     </div>
+    <?php include('templates/footer.php'); ?>
     <script><?php include('scripts/panier.js'); ?></script>
   </body>
 </html>

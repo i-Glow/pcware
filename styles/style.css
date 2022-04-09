@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
 
-:root {
+/* :root {
   --dark-black: #111111;
   --light-black: #303030;
   --black: #222222;
   --white-text: #fff;
   --purple: #9f60e7;
   --gray: #777;
-}
+} */
 
 * {
   padding: 0;
@@ -19,11 +19,6 @@
 button {
   cursor: pointer;
   font-weight: 700;
-}
-
-footer {
-  background-color: var(--dark-black);
-  height: 500px;
 }
 
 .body {
@@ -47,6 +42,16 @@ footer {
   height: 300px;
   border-radius: 3px;
   margin-bottom: 50px;
+  display: flex;
+}
+
+.hero-bg {
+  position: absolute;
+}
+
+.left {
+  padding: 3%;
+  width: 35%;
 }
 
 .hero-btn-container {
@@ -99,13 +104,13 @@ footer {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   column-gap: 40px;
   row-gap: 60px;
 }
 
 .product-card {
-  min-width: 240px;
+  min-width: 230px;
   height: 280px;
   background-color: var(--light-black);
   border: 2px solid var(--light-black);
@@ -121,7 +126,6 @@ footer {
 .product-card:hover {
   border: 2px solid var(--gray);
   transition: all 0.2s;
-  transform: scale(105%);
 }
 
 .product-image {

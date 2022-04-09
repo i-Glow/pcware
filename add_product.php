@@ -1,6 +1,6 @@
 <?php 
 
-  include("db.php");
+  include("config/db.php");
   if(isset($_POST["submit"])){
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if($check !== false) {
@@ -59,5 +59,6 @@
         <button type="submit" name="submit">submit</button>
       </form>
     </div>
+    <?php include('templates/footer.php'); ?>
   </body>
 </html>
