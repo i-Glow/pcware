@@ -1,6 +1,8 @@
 const products = document.querySelectorAll(".product-card");
 const add = document.querySelectorAll(".add");
 
+// Add product to cart
+
 let productList = new Array();
 
 products.forEach((el) => {
@@ -27,5 +29,88 @@ add.forEach((el, i) => {
     const res = JSON.stringify(list);
     document.cookie =
       "product=" + res + "; expires= Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+  });
+});
+
+// Availabilty filter
+const available = document.querySelector("#available");
+
+available.addEventListener("click", () => {
+  dropFilters();
+  availabileHandler("none");
+});
+
+function availabileHandler(display = "") {
+  products.forEach((el) => {
+    if (el.children[4].className === "stock") {
+      el.style.display = display;
+      display !== "" ? updateClassLists(available) : updateClassLists();
+    }
+  });
+}
+
+// Price filter
+const price = document.querySelector("#price");
+
+price.addEventListener("click", () => {
+  dropFilters();
+  priceHandler();
+});
+
+function priceHandler() {
+  updateClassLists(price);
+}
+
+// Drop filters
+const drop = document.querySelector("#drop");
+drop.addEventListener("click", () => {
+  dropFilters();
+});
+
+function dropFilters() {
+  availabileHandler();
+  // priceHandler();
+}
+
+function updateClassLists(button = null) {
+  document.querySelectorAll(".small-btn").forEach((btn) => {
+    btn.classList.remove("btn-active");
+    button?.classList.add("btn-active");
+  });
+}
+
+// Categories
+const category = document.querySelectorAll(".checkbox");
+const catName = document.querySelectorAll(".category");
+
+let checked = new Array();
+
+category.forEach((cat, i) => {
+  cat.addEventListener("change", () => {
+    if (cat.checked) {
+      checked.push(cat.id);
+      products.forEach((product) => {
+        if (!checked.includes(product.children[2].innerText)) {
+          product.style.display = "none";
+        } else {
+          product.style.display = "";
+        }
+      });
+    } else if (!cat.checked && checked.length) {
+      const index = checked.indexOf(cat.id);
+      if (index > -1) {
+        checked.splice(index, 1);
+      }
+      products.forEach((product) => {
+        if (product.children[2].innerText === cat.id) {
+          product.style.display = "none";
+        }
+      });
+    }
+    if (!checked.length) {
+      products.forEach((product) => {
+        product.style.display = "";
+      });
+    }
   });
 });

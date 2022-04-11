@@ -25,7 +25,7 @@
         <h2 class="name"><?php echo $product["name"]; ?></h2>
         <h4 class="category"><?php echo $product["category"]; ?></h4>
         <div class="seperator"></div>
-        <p class="price"><?php echo $product["price"]; ?> DA</p>
+        <p class="price">Unit Price: <?php echo $product["price"]; ?> DA</p>
         <div class="quantity">
           <span class="qty">QTY</span>
           <select id="qty-value">

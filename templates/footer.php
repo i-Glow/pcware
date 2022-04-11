@@ -17,5 +17,8 @@
     <a href="add_product.php">
       <li>Add product</li>
     </a>
+    <a href="panier.php">
+      <li>Cart</li>
+    </a>
   </ul>
 </footer>

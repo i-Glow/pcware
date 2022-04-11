@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panier</title>
-    <style><?php include('styles/panier.css') ?></style>
+    <style><?php include('styles/panier.css'); ?></style>
   </head>
   <body>
     <?php include("templates/navbar.php") ?>
@@ -21,7 +21,7 @@
       <div class="product-list">
         <h2 class="title">Product</h2>
         <div id="item-list" class="item-list">
-          <?php if(isset($products))foreach($products as $product){ ?>
+          <?php if(isset($products) && count($products))foreach($products as $product){ ?>
             <?php   
               $id = $product->{"id"};
               $sql = "SELECT name, category, price, image FROM product WHERE prodid = '$id'";
@@ -64,7 +64,7 @@
               </svg>
             </button>
           </div>
-          <?php } ?>
+          <?php } else echo "Your cart is empty, add some products then come back!"; ?>
         </div>
         <div class="menu">
           <div class="button-area">
@@ -119,6 +119,6 @@
       </div>
     </div>
     <?php include('templates/footer.php'); ?>
-    <script><?php include('scripts/panier.js'); ?></script>
+    <script src="scripts/panier.js"></script>
   </body>
 </html>

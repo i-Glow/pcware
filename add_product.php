@@ -16,6 +16,7 @@
     $name = $_POST["name"];
     $category = $_POST["category"];
     $price = $_POST["price"];
+    $quantity = $_POST["quantity"];
     
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if($check !== false){
@@ -24,7 +25,7 @@
     }
     
     if($uploadOk == 1){
-      $sql = "INSERT INTO product (name, category, price, image) VALUES('$name', '$category', '$price', '$imgContent')";
+      $sql = "INSERT INTO product (name, category, price, quantity, image) VALUES('$name', '$category', '$price', '$quantity', $imgContent')";
       if(mysqli_query($conn, $sql)){
         header('Location: index.php');
       }else {
@@ -54,6 +55,8 @@
         <input type="text" name="category" />
         <label for="price"> price </label>
         <input type="number" name="price" />
+        <label for="price"> quantity </label>
+        <input type="number" name="quantity" />
         <label for="image"> + </label>
         <input type="file" name="image" />
         <button type="submit" name="submit">submit</button>
