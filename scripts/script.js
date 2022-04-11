@@ -42,7 +42,7 @@ available.addEventListener("click", () => {
 
 function availabileHandler(display = "") {
   products.forEach((el) => {
-    if (el.children[4].className === "stock") {
+    if (el.children[5]) {
       el.style.display = display;
       display !== "" ? updateClassLists(available) : updateClassLists();
     }

@@ -103,8 +103,8 @@
             <div class="product-name"><?php echo $el[1]; ?></div>
             <div class="product-type"><?php echo $el[2]; ?></div>
             <div class="product-price"><?php echo $el[3]; ?> DA</div>
-            <?php if($el[4] == 0){echo '<p class="stock">Out of stock</p>';} 
-             else echo '<button class="add">ADD TO CART</button>' ?>
+            <button class="add" <?php if($el[4] == 0) echo 'style="display: none"';?>>ADD TO CART</button>
+            <?php if($el[4] == 0){echo '<p class="stock">Out of stock</p>';}?> 
           </div>
           <?php } ?>
         </div>
