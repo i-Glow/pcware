@@ -34,32 +34,34 @@ add.forEach((el, i) => {
 
 // Availabilty filter
 const available = document.querySelector("#available");
+let availableFilter = false;
 
 available.addEventListener("click", () => {
-  dropFilters();
-  availabileHandler("none");
+  availableFilter ? availabileHandler() : availabileHandler("none");
+  availableFilter = !availableFilter;
 });
 
 function availabileHandler(display = "") {
   products.forEach((el) => {
     if (el.children[5]) {
-      el.style.display = display;
+      if (checked.includes(el.children[2].innerText) || !checked.length)
+        el.style.display = display;
       display !== "" ? updateClassLists(available) : updateClassLists();
     }
   });
 }
 
-// Price filter
-const price = document.querySelector("#price");
+// // Price filter
+// const price = document.querySelector("#price");
 
-price.addEventListener("click", () => {
-  dropFilters();
-  priceHandler();
-});
+// price.addEventListener("click", () => {
+//   dropFilters();
+//   priceHandler();
+// });
 
-function priceHandler() {
-  updateClassLists(price);
-}
+// function priceHandler() {
+//   updateClassLists(price);
+// }
 
 // Drop filters
 const drop = document.querySelector("#drop");
@@ -69,6 +71,7 @@ drop.addEventListener("click", () => {
 
 function dropFilters() {
   availabileHandler();
+  availableFilter = false;
   // priceHandler();
 }
 
@@ -92,6 +95,8 @@ category.forEach((cat, i) => {
       products.forEach((product) => {
         if (!checked.includes(product.children[2].innerText)) {
           product.style.display = "none";
+        } else if (availableFilter && product.children[5]) {
+          product.style.display = "none";
         } else {
           product.style.display = "";
         }
@@ -109,7 +114,11 @@ category.forEach((cat, i) => {
     }
     if (!checked.length) {
       products.forEach((product) => {
-        product.style.display = "";
+        if (availableFilter && product.children[5])
+          product.style.display = "none";
+        else {
+          product.style.display = "";
+        }
       });
     }
   });

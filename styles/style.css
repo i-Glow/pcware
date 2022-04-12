@@ -177,3 +177,14 @@ svg {
     gap: 10px;
   }
 }
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+}
