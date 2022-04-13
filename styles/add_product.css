@@ -26,11 +26,37 @@ form {
 input {
   outline: none;
   padding: 2px;
-  color: black;
+  color: var(--white-text);
+  border: none;
+  border-bottom: 1px solid var(--purple);
+  background-color: transparent;
+  font-size: 16px;
+}
+
+input[type=file] {
+  border: none;
+}
+
+form {
+  width: 350px;
+  padding: 100px 0;
 }
 
 .main {
   background-color: var(--black);
   width: 98%;
   padding: 0 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit {
+  height: 40px;
+  background-color: var(--purple);
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
 }

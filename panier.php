@@ -114,8 +114,22 @@
         </div>
       </div>
       <div class="checkout">
-        <div class="checkout-body"></div>
-        <div class="checkout-bottom">Note that!</div>
+        <h3>Card details</h3>
+        <form class="card-details">
+          <input placeholder="Card number" type="number">
+          <div class="exp">
+            Expiry date
+            <input type="number">
+            /
+            <input type="number">
+            /
+            <input type="number">
+          </div>
+            <!-- <input placeholder="Exp. date" type="number"> -->
+          <input placeholder="CVV" type="number">
+          <button class="purchase">PURCHASE</button>
+        </form>
+        <div class="note">Delivery may take up to a month. Please be patient</div>
       </div>
     </div>
     <?php include('templates/footer.php'); ?>

@@ -82,8 +82,8 @@
           <h2 class="section-title">Our Products</h2>
           <div class="filter-btn">
             <button id="available" class="small-btn">Available</button>
-            <button id="price" class="small-btn">Price</button>
-            <button id="drop" class="small-btn">Drop filters</button>
+            <!-- <button id="price" class="small-btn">Price</button> -->
+            <button id="drop" class="small-btn">Drop filter</button>
           </div>
         </div>
         <div class="filters">

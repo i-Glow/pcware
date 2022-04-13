@@ -48,18 +48,13 @@
   </head>
   <body><?php include("templates/navbar.php") ?>
     <div class="main">
-      <form action="add_product.php" method="POST" enctype="multipart/form-data" >
-        <label for="name"> name </label>
-        <input type="text" name="name" />
-        <label for="category"> category </label>
-        <input type="text" name="category" />
-        <label for="price"> price </label>
-        <input type="number" name="price" />
-        <label for="price"> quantity </label>
-        <input type="number" name="quantity" />
-        <label for="image"> + </label>
+      <form action="add_product.php" autocomplete="off" method="POST" enctype="multipart/form-data" >
+        <input placeholder="Product name" type="text" name="name" />
+        <input placeholder="Category" type="text" name="category" />
+        <input placeholder="Price" type="number" name="price" />
+        <input placeholder="Quantity" type="number" name="quantity" />
         <input type="file" name="image" />
-        <button type="submit" name="submit">submit</button>
+        <button class="submit" type="submit" name="submit">submit</button>
       </form>
     </div>
     <?php include('templates/footer.php'); ?>

@@ -10,6 +10,7 @@
 }
 
 * {
+  margin: 0;
   color: var(--white-text);
   font-family: Nunito;
 }
@@ -38,6 +39,79 @@ body {
 .checkout {
   width: 25%;
   background-color: var(--purple);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  position: relative;
+}
+
+.checkout  * {
+  color: white;
+}
+
+.checkout > * {
+  margin-top: 30px;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 20px;
+}
+
+input {
+  outline: none;
+  padding: 2px;
+  /* color: white; */
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.exp {
+  /* color: white; */
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+.exp > input {
+  width: 20px;
+}
+
+.exp > input:last-of-type {
+  width: 40px;
+}
+
+.note{
+  font-size: 12px;
+  width: calc(100% - 40px);
+  background-color: #ad76ec;
+  position: absolute;
+  bottom: 0px;
+  padding: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::placeholder{
+  color: white;
+}
+
+.purchase {
+  height: 40px;
+  background-color: rgb(72, 18, 117);
+  /* color: white; */
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
 }
 
 .item-list {
