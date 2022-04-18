@@ -1,6 +1,6 @@
 <?php 
   include("config/db.php");
-  $result = mysqli_query($conn, "SELECT * FROM product LIMIT 10");
+  $result = mysqli_query($conn, "SELECT * FROM product LIMIT 8");
   $product = mysqli_fetch_all($result);
 
   $category = mysqli_query($conn, "SELECT DISTINCT(category) FROM product");
@@ -15,13 +15,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Good game</title>
     <style><?php include('styles/variables.css'); ?></style>
+    <style><?php include('styles/typography.css'); ?></style>
     <style><?php include('styles/style.css'); ?></style>
     <style><?php include('styles/footer.css'); ?></style>
   </head>
   <body>
-    <!-- <div class="menu"></div> -->
+    <?php include("./templates/navbar.php") ?>
     <div class="body">
-      <?php include("./templates/navbar.php") ?>
       <!-- HERO SECTION -->
       <!-- <div class="hero-section">
         <img src="" alt="bg" class="hero-bg" />
@@ -82,7 +82,6 @@
           <h2 class="section-title">Our Products</h2>
           <div class="filter-btn">
             <button id="available" class="small-btn">Available</button>
-            <!-- <button id="price" class="small-btn">Price</button> -->
             <button id="drop" class="small-btn">Drop filter</button>
           </div>
         </div>

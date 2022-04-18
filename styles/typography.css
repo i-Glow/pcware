@@ -1,0 +1,7 @@
+button, a, ::placeholder {
+  font-family: var(--secondary-font);
+}
+
+h3 {
+  font-weight: 600;
+}

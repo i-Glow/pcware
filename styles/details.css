@@ -4,10 +4,13 @@
   font-family: var(--font);
 }
 
+body {
+  background-color: var(--light-black);
+}
+
 .wrapper {
   width: 96%;
   padding: 2%;
-  background-color: var(--light-black);
 }
 
 .product {

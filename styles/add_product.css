@@ -1,26 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
-
-:root {
-  --dark-black: #111111;
-  --light-black: #303030;
-  --black: #222222;
-  --white-text: #fff;
-  --purple: #9f60e7;
-  --gray: #777;
-}
-
 * {
   padding: 0;
   margin: 0;
   color: var(--white-text);
-  font-family: Nunito, sans-serif;
+  font-family: var(--font), sans-serif;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 20px 0;
+  gap: 20px;
+  background-color: var(--dark-black);
+  padding: 50px;
 }
 
 input {
@@ -37,13 +27,15 @@ input[type=file] {
   border: none;
 }
 
-form {
-  width: 350px;
-  padding: 100px 0;
+h3 {
+  font-family: var(--secondary-font);
+}
+
+body {
+  background-color: var(--black);
 }
 
 .main {
-  background-color: var(--black);
   width: 98%;
   padding: 0 1%;
   display: flex;

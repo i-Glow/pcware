@@ -88,7 +88,7 @@ const catName = document.querySelectorAll(".category");
 
 let checked = new Array();
 
-category.forEach((cat, i) => {
+category.forEach((cat) => {
   cat.addEventListener("change", () => {
     if (cat.checked) {
       checked.push(cat.id);

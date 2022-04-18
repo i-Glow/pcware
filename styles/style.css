@@ -1,20 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
-
 * {
   padding: 0;
   margin: 0;
   color: var(--white-text);
-  font-family: Nunito, sans-serif;
+}
+
+body {
+  font-family: var(--secondary-font), sans-serif;
+  background-color: var(--black);
 }
 
 button {
   cursor: pointer;
   font-weight: 700;
+  font-family: var(--font), sans-serif;
 }
 
 .body {
-  background-color: var(--black);
-  /* width: 76%; */
   width: 96%;
   padding: 0 2%;
   display: flex;
@@ -98,6 +99,7 @@ button {
 }
 
 .product-card {
+  font-family: var(--font), sans-serif;
   min-width: 230px;
   height: 280px;
   background-color: var(--light-black);

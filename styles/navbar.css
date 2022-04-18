@@ -2,20 +2,27 @@ nav {
   height: 55px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 15px;
+  justify-content: space-between;
   background-color: var(--black);
+  padding: 0 2%;
+  margin-bottom: 20px;
 }
 
 svg {
   cursor: pointer;
 }
 
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
 .switch {
   position: relative;
   width: 80px;
   height: 30px;
-  background-color: var(--dark-black);
+  background-color: var(--purple);
   border-radius: 18px;
 }
 
@@ -29,6 +36,26 @@ svg {
   left: 3px;
   top: 3px;
   background-color: var(--black);
+  /* background-color: yellow; */
   transition: 0.2s ease-out;
   cursor: pointer;
+}
+
+#cart {
+  position: relative;
+}
+
+.count {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: var(--purple);
+  color: white;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  position: absolute;
+  right: -4px;
 }

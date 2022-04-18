@@ -43,18 +43,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="add_product.css" /> -->
+    <style><?php include('styles/variables.css'); ?></style>
+    <style><?php include('styles/typography.css'); ?></style>
     <style><?php include('styles/add_product.css'); ?></style>
   </head>
   <body><?php include("templates/navbar.php") ?>
     <div class="main">
       <form action="add_product.php" autocomplete="off" method="POST" enctype="multipart/form-data" >
+        <h3>Product Details</h3>
         <input placeholder="Product name" type="text" name="name" />
         <input placeholder="Category" type="text" name="category" />
         <input placeholder="Price" type="number" name="price" />
         <input placeholder="Quantity" type="number" name="quantity" />
         <input type="file" name="image" />
-        <button class="submit" type="submit" name="submit">submit</button>
+        <button class="submit" type="submit" name="submit">SUBMIT</button>
       </form>
     </div>
     <?php include('templates/footer.php'); ?>
