@@ -9,7 +9,7 @@
       <button id="switch-btn" class="switch-btn"></button>
     </div>
     <a id="cart" href="/good-games/panier.php">
-      <div class="count">2</div>
+      <div class="cart-count">2</div>
       <svg
         width="24"
         height="26"
@@ -29,4 +29,5 @@
   </div>
 </nav>
 <script><?php include('scripts/theme.js'); ?></script>
-<script src="scripts/navcart.js" ></script>
+<script><?php include('scripts/navcart.js'); ?></script>
+<!-- <script src="scripts/navcart.js" ></script> -->

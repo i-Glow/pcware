@@ -1,5 +1,7 @@
-const cart = document.querySelector(".count");
+const cart = document.querySelector(".cart-count");
 let itemCount = getCookies().length;
+
+console.log(getCookies().length);
 
 if (itemCount) {
   cart.style.display = "flex";
