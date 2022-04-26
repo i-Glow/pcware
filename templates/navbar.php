@@ -1,33 +1,19 @@
-<style><?php include('styles/navbar.css'); ?></style>
-
+<link rel="stylesheet" href="../styles/navbar.css">
 <nav>
-  <a href="index.php">
+  <a href="../pages/main.php">
     <h3>pcware</h3>
   </a>
   <div class="right-nav" >
     <div class="switch">
-      <button id="switch-btn" class="switch-btn"></button>
+      <button id="switch-btn" class="switch-btn">
+        <img width="19px" src="../assets/icons/bulb.svg" alt="">
+      </button>
     </div>
-    <a id="cart" href="/good-games/panier.php">
-      <div class="cart-count">2</div>
-      <svg
-        width="24"
-        height="26"
-        viewBox="0 0 18 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-        d="M13 9V5C13 2.79086 11.2091 1 9 1C6.79086 1 5 2.79086 5 5V9M2 7H16L17 19H1L2 7Z"
-        stroke="#777"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          />
-      </svg>
+    <a id="cart" href="../pages/panier.php">
+      <div class="cart-count"></div>
+      <img width="27px" src="../assets/icons/cart.svg">
     </a>
   </div>
 </nav>
-<script><?php include('scripts/theme.js'); ?></script>
-<script><?php include('scripts/navcart.js'); ?></script>
-<!-- <script src="scripts/navcart.js" ></script> -->
+<script src="../scripts/theme.js"></script>
+<script src="../scripts/navcart.js"></script>

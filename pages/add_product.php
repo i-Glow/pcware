@@ -1,6 +1,6 @@
 <?php 
 
-  include("config/db.php");
+  include("../config/db.php");
   if(isset($_POST["submit"])){
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if($check !== false) {
@@ -25,9 +25,9 @@
     }
     
     if($uploadOk == 1){
-      $sql = "INSERT INTO product (name, category, price, quantity, image) VALUES('$name', '$category', '$price', '$quantity', $imgContent')";
+      $sql = "INSERT INTO product (name, category, price, quantity, image) VALUES('$name', '$category', '$price', '$quantity', '$imgContent')";
       if(mysqli_query($conn, $sql)){
-        header('Location: index.php');
+        header('Location: main.php');
       }else {
         echo "error " . mysqli_error($conn);
       }
@@ -42,23 +42,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style><?php include('styles/variables.css'); ?></style>
-    <style><?php include('styles/typography.css'); ?></style>
-    <style><?php include('styles/add_product.css'); ?></style>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+    <title>New Product</title>
+    <link rel="stylesheet" href="../styles/variables.css">
+    <link rel="stylesheet" href="../styles/typography.css">
+    <link rel="stylesheet" href="../styles/add_product.css">
   </head>
-  <body><?php include("templates/navbar.php") ?>
+  <body>
+    <?php include("../templates/navbar.php") ?>
     <div class="main">
       <form action="add_product.php" autocomplete="off" method="POST" enctype="multipart/form-data" >
         <h3>Product Details</h3>
-        <input placeholder="Product name" type="text" name="name" />
-        <input placeholder="Category" type="text" name="category" />
-        <input placeholder="Price" type="number" name="price" />
-        <input placeholder="Quantity" type="number" name="quantity" />
-        <input type="file" name="image" />
+        <input placeholder="Product name" type="text" name="name" required/>
+        <input placeholder="Category" type="text" name="category" required/>
+        <input placeholder="Price" type="number" name="price" required/>
+        <input placeholder="Quantity" type="number" name="quantity" required/>
+        <input type="file" name="image" required/>
         <button class="submit" type="submit" name="submit">SUBMIT</button>
       </form>
     </div>
-    <?php include('templates/footer.php'); ?>
+    <?php include('../templates/footer.php'); ?>
   </body>
 </html>

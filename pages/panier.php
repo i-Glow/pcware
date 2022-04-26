@@ -1,6 +1,6 @@
 <?php 
 
-  include('config/db.php');
+  include('../config/db.php');
   if(isset($_COOKIE["product"]))
     $products = json_decode($_COOKIE["product"]);
 
@@ -12,13 +12,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Panier</title>
-    <style><?php include('styles/variables.css'); ?></style>
-    <style><?php include('styles/typography.css'); ?></style>
-    <style><?php include('styles/panier.css'); ?></style>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+    <title>Your cart</title>
+    <link rel="stylesheet" href="../styles/variables.css">
+    <link rel="stylesheet" href="../styles/typography.css">
+    <link rel="stylesheet" href="../styles/panier.css">
   </head>
   <body>
-    <?php include("templates/navbar.php") ?>
+    <?php include("../templates/navbar.php") ?>
     <div class="wrapper">
       <div class="product-list">
         <h2 class="title">Product</h2>
@@ -32,7 +33,7 @@
             ?>
           <div class="item">
             <div class="item-details">
-              <img class="image" src="data:image/png;charset=utf8;base64,<?php echo base64_encode($data["image"]); ?>" />
+              <img height="80px" class="image" src="data:image/png;charset=utf8;base64,<?php echo base64_encode($data["image"]); ?>" />
               <h3 class="detail-name"><?php echo $data["name"] ?></h3>
             </div>
             <div class="seperator"></div>
@@ -70,7 +71,7 @@
         </div>
         <div class="menu">
           <div class="button-area">
-            <a class="link" href="index.php"
+            <a class="link" href="main.php"
               ><svg
                 width="20"
                 height="20"
@@ -134,7 +135,7 @@
         <div class="note">Delivery may take up to a month. Please be patient</div>
       </div>
     </div>
-    <?php include('templates/footer.php'); ?>
-    <script src="scripts/panier.js"></script>
+    <?php include('../templates/footer.php'); ?>
+    <script src="../scripts/panier.js"></script>
   </body>
 </html>

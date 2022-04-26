@@ -22,7 +22,7 @@ svg {
   position: relative;
   width: 80px;
   height: 30px;
-  background-color: var(--purple);
+  background-color: var(--dark-black);
   border-radius: 18px;
 }
 
@@ -35,10 +35,12 @@ svg {
   border: none;
   left: 3px;
   top: 3px;
-  background-color: var(--black);
-  /* background-color: yellow; */
+  background-color: #eee;
   transition: 0.2s ease-out;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #cart {

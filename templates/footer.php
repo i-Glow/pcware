@@ -1,17 +1,15 @@
-<style>
-  <?php include("styles/footer.css") ?>
-</style>
+<link rel="stylesheet" href="../styles/footer.css">
 <footer>
   <div class="ft-container">
     <ul>
       <p>Navigate</p>
-      <a href="index.php">
+      <a href="../pages/main.php">
         <li>Home</li>
       </a>
-      <a href="add_product.php">
+      <a href="../pages/add_product.php">
         <li>Add product</li>
       </a>
-      <a href="panier.php">
+      <a href="../pages/panier.php">
         <li>Cart</li>
       </a>
     </ul>
@@ -22,5 +20,5 @@
       </a>
     </ul>
   </div>
-  <p class="info" >BADJI Mokhtar University Web Developement Mini Project</p>
+  <p class="info" >A University Web Developement Mini Project</p>
 </footer>
