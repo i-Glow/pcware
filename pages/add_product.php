@@ -55,12 +55,18 @@
         <h3>Product Details</h3>
         <input placeholder="Product name" type="text" name="name" required/>
         <input placeholder="Category" type="text" name="category" required/>
-        <input placeholder="Price" type="number" name="price" required/>
+        <input placeholder="Price" type="number" name="price" min="0" max="999999" required/>
         <input placeholder="Quantity" type="number" name="quantity" required/>
-        <input type="file" name="image" required/>
+        <label class="file-input">
+          <div class="styled-file-input">
+            Select image
+          </div>
+          <input type="file" id="file-input" name="image" accept="image/png" required/>
+        </label>
         <button class="submit" type="submit" name="submit">SUBMIT</button>
       </form>
     </div>
     <?php include('../templates/footer.php'); ?>
+    <script><?php include("../scripts/addProduct.js") ?></script>
   </body>
 </html>

@@ -27,11 +27,11 @@
           <?php if(isset($products) && count($products))foreach($products as $product){ ?>
             <?php   
               $id = $product->{"id"};
-              $sql = "SELECT name, category, price, image FROM product WHERE prodid = '$id'";
+              $sql = "SELECT name, category, price, image, quantity FROM product WHERE prodid = '$id'";
               $result = mysqli_query($conn, $sql);
               $data = mysqli_fetch_assoc($result);
             ?>
-          <div class="item">
+          <div data-prodid="<?php echo $id; ?>" class="item">
             <div class="item-details">
               <img height="80px" class="image" src="data:image/png;charset=utf8;base64,<?php echo base64_encode($data["image"]); ?>" />
               <h3 class="detail-name"><?php echo $data["name"] ?></h3>
@@ -41,7 +41,7 @@
             <div class="seperator"></div>
             <div class="item-count">
               <button class="quantity plus">+</button>
-              <span class="count"><?php echo $product->{"quantity"}; ?></span>
+              <span class="count" data-quantity="<?php echo $data["quantity"]; ?>"><?php echo $product->{"quantity"}; ?></span>
               <button class="quantity minus">-</button>
             </div>
             <div class="seperator"></div>

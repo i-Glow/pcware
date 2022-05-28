@@ -1,6 +1,6 @@
 <?php 
   include("../config/db.php");
-  $result = mysqli_query($conn, "SELECT * FROM product LIMIT 8");
+  $result = mysqli_query($conn, "SELECT * FROM product ORDER BY RAND() LIMIT 12");
   $product = mysqli_fetch_all($result);
 
   $category = mysqli_query($conn, "SELECT DISTINCT(category) FROM product");
@@ -22,21 +22,41 @@
   <body>
     <?php include("../templates/navbar.php") ?>
     <div class="body">
+      <section class="hero">
+        <div class="description">
+          <h2>Best prices across the country</h2>
+          <div>
+            <p>It's about time you upgraded your computer, but where do you start?</p>
+            <p>Here's the first step: build your own computer from the ground up.</p>
+          </div>
+          <div>
+            <p>Buy a total of 15000DA and get a steam gift card</p>
+            <p>and also get a 5% discount coupon for next purchases.</p>
+          </div>
+          <a href="#product-section">
+            <button class="hero-btn">
+              Start shoping → 
+            </button>
+          </a>
+        </div>
+        <img height="300px" src="../assets/images/steamcards.png"/>
+      </section>
       <!-- PRODUCT SECTION -->
-      <section class="products">
+      <section id="product-section" class="products">
         <div class="filters">
           <h2 class="section-title">Our Products</h2>
           <div class="filter-btn">
             <button id="available" class="small-btn">Available</button>
-            <button id="drop" class="small-btn">Drop filter</button>
+            <button id="drop" class="small-btn">x</button>
           </div>
         </div>
         <div class="filters">
           <?php foreach($category as $cat){ ?>
-          <div class="category">
+          <label class="category">
             <input type="checkbox" class="checkbox" id="<?php echo $cat[0]; ?>">
-            <span><?php echo $cat[0]; ?></span>
-          </div>
+            <span class="styled-checkbox"></span>
+            <?php echo $cat[0]; ?>
+          </label>
           <?php } ?>
         </div>
         <div class="product-grid">

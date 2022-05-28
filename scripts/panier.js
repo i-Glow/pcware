@@ -1,10 +1,11 @@
-const itemList = document.getElementById("item-list");
+// const itemList = document.getElementById("item-list");
 const count = document.querySelectorAll(".item-count");
 const product = document.querySelectorAll(".item");
 const deleteAll = document.querySelector(".delete-all");
 const totalPrice = document.getElementById("total-price");
 const price = document.querySelectorAll(".item-price");
 
+//calculate cart price onpage load
 totalPriceHandler();
 
 // product count
@@ -12,8 +13,10 @@ count.forEach((item, i) => {
   item.children[0].addEventListener("click", () => {
     let value = item.children[1].innerText;
     let singlePrice = price[i].children[1].innerText.split(" ")[0] / value;
-    value++;
-    item.children[1].innerText = value;
+    if (value < Number(item.children[1].dataset.quantity)) {
+      value++;
+      item.children[1].innerText = value;
+    }
     price[i].children[1].innerText = singlePrice * value + " DA";
 
     cookieQuantity(i, value);
@@ -49,10 +52,14 @@ product.forEach((product, i) => {
     product.remove();
     //remove from cookies
     let list = getCookies();
-    list.splice(i, 1);
+    //finds the exact product to be removed
+    let toRemove = list.find((e) => e.id == product.dataset.prodid);
+    //returns the new list after we remove the product
+    list = list.filter((e) => e !== toRemove);
     const res = JSON.stringify(list);
     setCookie("product", res);
 
+    productCount();
     totalPriceHandler();
   });
 });
@@ -64,11 +71,12 @@ deleteAll.addEventListener("click", () => {
     //remove from cookies
     deleteCookie("product");
     totalPrice.innerText = "0 DA";
+
+    productCount();
   });
 });
 
-// console.log(Date());
-// total price
+// total cart items price
 function totalPriceHandler() {
   const newPrice = document.querySelectorAll(".item-price");
   let totalAmount = 0;
@@ -79,6 +87,20 @@ function totalPriceHandler() {
   });
 
   totalPrice.innerText = totalAmount + " DA";
+}
+
+// cart icon counter
+function productCount() {
+  const cart = document.querySelector(".cart-count");
+
+  let itemCount = getCookies().length;
+  console.log(itemCount);
+  if (itemCount > 0) {
+    cart.style.display = "flex";
+    cart.innerText = itemCount;
+  } else {
+    cart.style.display = "none";
+  }
 }
 
 function getCookies() {

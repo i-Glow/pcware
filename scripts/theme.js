@@ -1,4 +1,3 @@
-const toggle = document.getElementById("switch-btn");
 const toggleBtn = document.querySelector(".switch-btn");
 const root = document.querySelector(":root");
 
@@ -30,7 +29,7 @@ const toggleTheme = () => {
   }
 };
 
-toggle.addEventListener("click", toggleTheme);
+toggleBtn.addEventListener("click", toggleTheme);
 
 function dark() {
   root.style.setProperty("--dark-black", darkBlack);

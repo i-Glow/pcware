@@ -1,11 +1,12 @@
 <link rel="stylesheet" href="../styles/navbar.css">
 <nav>
-  <a href="../pages/main.php">
+  <a id="home" href="../pages/main.php">
+    <img src="../assets/images/logo.png" height="40px" alt="">
     <h3>pcware</h3>
   </a>
   <div class="right-nav" >
     <div class="switch">
-      <button id="switch-btn" class="switch-btn">
+      <button id="switch-button" class="switch-btn">
         <img width="19px" src="../assets/icons/bulb.svg" alt="">
       </button>
     </div>
@@ -15,5 +16,6 @@
     </a>
   </div>
 </nav>
+<!-- because the navbar is present in all pages theme is added here -->
 <script src="../scripts/theme.js"></script>
 <script src="../scripts/navcart.js"></script>

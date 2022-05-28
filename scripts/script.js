@@ -12,6 +12,7 @@ products.forEach((el) => {
   });
 });
 
+//add a product to cart
 add.forEach((el, i) => {
   el.addEventListener("click", () => {
     let mycookie = document.cookie || undefined;
@@ -29,6 +30,11 @@ add.forEach((el, i) => {
     const res = JSON.stringify(list);
     document.cookie =
       "product=" + res + "; expires= Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+
+    //show a toast (indicator) when a product is added to cart
+    createToast(i);
+    //update cart icon counter
+    countProducts();
   });
 });
 
@@ -67,6 +73,10 @@ function availabileHandler(display = "") {
 const drop = document.querySelector("#drop");
 drop.addEventListener("click", () => {
   dropFilters();
+  drop.classList.add("drop");
+  setTimeout(() => {
+    drop.classList.remove("drop");
+  }, 100);
 });
 
 function dropFilters() {
@@ -123,3 +133,24 @@ category.forEach((cat) => {
     }
   });
 });
+
+//create toast
+function createToast(i) {
+  let box = document.createElement("div");
+  box.classList.add("toast");
+  box.innerText = "Successfully added";
+  products[i].appendChild(box);
+  setTimeout(() => {
+    box.remove();
+  }, 5000);
+}
+
+function countProducts() {
+  const cart = document.querySelector(".cart-count");
+  let itemCount = getCookies().length;
+
+  if (itemCount) {
+    cart.style.display = "flex";
+    cart.innerText = itemCount;
+  }
+}

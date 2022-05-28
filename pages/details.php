@@ -4,6 +4,12 @@
   $sql = "SELECT * FROM product WHERE prodid = '$id'";
   $result = mysqli_query($conn, $sql);
   $product = mysqli_fetch_assoc($result);
+
+  $cat = $product['category'];
+  $id = $product['prodid'];
+  $sql2 = "SELECT prodid, name, price, image FROM product WHERE category = '$cat' AND prodid <> '$id'";
+  $result2 = mysqli_query($conn, $sql2);
+  $suggestions = mysqli_fetch_all($result2);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +27,7 @@
   <?php include("../templates/navbar.php"); ?>
   <div class="wrapper">
     <div class="product" id=<?php echo $product["prodid"]; ?>>
-      <div class="image"><img width="80%" src="data:image/png;charset=utf8;base64,<?php echo base64_encode($product["image"]); ?>" alt="a"></div>
+      <div class="image"><img height="400px" src="data:image/png;charset=utf8;base64,<?php echo base64_encode($product["image"]); ?>" alt="a"></div>
       <div class="description">
         <h2 class="name"><?php echo $product["name"]; ?></h2>
         <h4 class="category"><?php echo $product["category"]; ?></h4>
@@ -30,21 +36,34 @@
         <div class="quantity">
           <span class="qty">QTY</span>
           <select id="qty-value">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            <?php 
+            $i = 1;
+            while($i <= $product["quantity"] && $i <= 5){
+              echo "<option value='$i'>$i</option>";
+              $i++;
+            }
+            ?>
           </select>
         </div>
-        <button class="buy">ADD TO CART</button>
-        <p><span>In Stock: <span><?php echo $product["quantity"]; ?></p>
+        <button class="buy" <?php if($product["quantity"] == 0) echo "disabled"; ?>>ADD TO CART</button>
       </div>
     </div>
-    <div class="details"></div>
+    <section class="suggestions-section">
+      <h2>More products</h2>
+      <div class="suggestions-grid">
+        <?php if(isset($suggestions)) foreach($suggestions as $sugg) { ?>
+          <div class="suggestion" id="<?php echo $sugg[0] ?>">
+          <a href="details.php?id=<?php echo $sugg[0]; ?>"><img height="150px" src="data:image/png;charset=utf8;base64,<?php echo base64_encode($sugg[3]); ?>" alt="a"></a>
+          <div>
+            <p><?php echo $sugg[1]; ?></p>
+            <p><?php echo $sugg[2]; ?>DA</p>
+          </div>
+        </div>
+      <?php } ?>
+    </div>
   </div>
+</section>
   <?php include("../templates/footer.php"); ?>
   <script src="../scripts/details.js" ></script>
-  <script src="../scripts/theme.js" ></script>
 </body>
 </html>

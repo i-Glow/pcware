@@ -32,6 +32,7 @@ body {
 }
 
 .checkout {
+  margin-top: 50px;
   width: 25%;
   height: 400px;
   font-family: var(--secondary-font);
@@ -114,6 +115,8 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-height: 400px;
+  overflow:auto;
 }
 
 .item {
@@ -151,6 +154,7 @@ input::-webkit-inner-spin-button {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 18px;
 }
 
 .item-color {
