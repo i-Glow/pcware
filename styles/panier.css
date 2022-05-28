@@ -35,6 +35,7 @@ body {
   margin-top: 50px;
   width: 25%;
   height: 400px;
+  padding: 0 10px;
   font-family: var(--secondary-font);
   background-color: var(--purple);
   display: flex;
@@ -263,4 +264,52 @@ input::-webkit-inner-spin-button {
 
 .link path {
   stroke: var(--gray);
+}
+
+@media screen and (max-width: 1280px) {
+  .wrapper{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item * {
+    font-size: 12px;
+  }
+
+  .item{
+    width: 90%;
+    padding: 0;
+  }
+
+  .checkout{
+    min-width: 300px;
+    padding: 0;
+  }
+  .item-count, .item-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .detail-name {
+    position: initial;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .button-area {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper > * {
+    width: 100%;
+  }
 }

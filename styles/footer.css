@@ -17,6 +17,13 @@ footer {
   gap: 70px;
 }
 
+@media screen and (max-width: 480px) {
+  .ft-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
 footer * {
   font-family: var(--secondary-font);
 }
@@ -28,6 +35,10 @@ a {
 li {
   list-style-type: none;
   line-height: 1.5em;
+}
+
+ul{
+  padding: 0;
 }
 
 ul > p {

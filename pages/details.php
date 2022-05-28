@@ -51,15 +51,15 @@
     <section class="suggestions-section">
       <h2>More products</h2>
       <div class="suggestions-grid">
-        <?php if(isset($suggestions)) foreach($suggestions as $sugg) { ?>
+        <?php if($suggestions){foreach($suggestions as $sugg) { ?>
           <div class="suggestion" id="<?php echo $sugg[0] ?>">
-          <a href="details.php?id=<?php echo $sugg[0]; ?>"><img height="150px" src="data:image/png;charset=utf8;base64,<?php echo base64_encode($sugg[3]); ?>" alt="a"></a>
+          <a href="details.php?id=<?php echo $sugg[0]; ?>"><img height="100px" src="data:image/png;charset=utf8;base64,<?php echo base64_encode($sugg[3]); ?>" alt="a"></a>
           <div>
             <p><?php echo $sugg[1]; ?></p>
             <p><?php echo $sugg[2]; ?>DA</p>
           </div>
         </div>
-      <?php } ?>
+      <?php }}else echo "More products will be added soon"; ?>
     </div>
   </div>
 </section>
